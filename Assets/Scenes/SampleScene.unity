@@ -170,7 +170,7 @@ GameObject:
   - component: {fileID: 156194803}
   m_Layer: 0
   m_Name: XR Origin
-  m_TagString: Untagged
+  m_TagString: Player
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -422,6 +422,8 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 1860246324}
+  - component: {fileID: 224408324}
+  - component: {fileID: 224408323}
   m_Layer: 0
   m_Name: Sci Fi Gates
   m_TagString: Untagged
@@ -429,6 +431,38 @@ GameObject:
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
+--- !u!95 &224408323
+Animator:
+  serializedVersion: 3
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 224408322}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: c9c8764b0f8d1ff45b9d1a097771c1e0, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorControllerStateOnDisable: 0
+--- !u!114 &224408324
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 224408322}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4634967070f600c45bba2e0116b95f89, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  exitLight: {fileID: 754041907}
 --- !u!1 &267473507
 GameObject:
   m_ObjectHideFlags: 0
@@ -660,6 +694,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e39af64566d78e04b9973823b80ad887, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  gate1: {fileID: 224408322}
+  puzzle1: 0
 --- !u!4 &638170162
 Transform:
   m_ObjectHideFlags: 0
@@ -2250,8 +2286,14 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a3a1b44d4baca56409ee1909fd687e1a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  gm: {fileID: 0}
+  gameManager: {fileID: 638170161}
+  rightController: {fileID: 0}
+  leftController: {fileID: 915477413}
   inPuzzleZone: 0
+  inputController: {fileID: 927993779}
+  okHand: {fileID: 1882297193}
+  pointUp: {fileID: 1972941026}
+  fist: {fileID: 1500537605}
 --- !u!4 &1231281139
 Transform:
   m_ObjectHideFlags: 0
@@ -2930,6 +2972,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 3f6fdee4def90b842b64852e0edac9c7, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  puzzleObject: {fileID: 1160243926}
 --- !u!1 &1408535723
 GameObject:
   m_ObjectHideFlags: 0
@@ -3486,7 +3529,6 @@ GameObject:
   - component: {fileID: 1683111640}
   - component: {fileID: 1683111642}
   - component: {fileID: 1683111641}
-  - component: {fileID: 1683111643}
   m_Layer: 0
   m_Name: Frame
   m_TagString: Untagged
@@ -3556,20 +3598,6 @@ MeshFilter:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1683111639}
-  m_Mesh: {fileID: 4300004, guid: eca90685bd7c0e14c985891ef5c0a3f3, type: 3}
---- !u!64 &1683111643
-MeshCollider:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1683111639}
-  m_Material: {fileID: 0}
-  m_IsTrigger: 0
-  m_Enabled: 1
-  serializedVersion: 4
-  m_Convex: 1
-  m_CookingOptions: 30
   m_Mesh: {fileID: 4300004, guid: eca90685bd7c0e14c985891ef5c0a3f3, type: 3}
 --- !u!1 &1687208241
 GameObject:
@@ -4815,7 +4843,7 @@ Transform:
   m_GameObject: {fileID: 1972941026}
   m_LocalRotation: {x: 0.5, y: 0.5, z: -0.5, w: 0.5}
   m_LocalPosition: {x: -4.852, y: 2.736, z: 2.7029}
-  m_LocalScale: {x: 0.16489145, y: 1, z: 0.22860008}
+  m_LocalScale: {x: -0.1648915, y: 1, z: 0.22860008}
   m_Children: []
   m_Father: {fileID: 1687208242}
   m_RootOrder: 3

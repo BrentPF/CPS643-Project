@@ -4,6 +4,7 @@ using UnityEngine;
 
 public class PuzzleZone : MonoBehaviour
 {
+    public GameObject puzzleObject;
     // Start is called before the first frame update
     void Start()
     {
@@ -18,6 +19,15 @@ public class PuzzleZone : MonoBehaviour
 
     private void OnTriggerEnter(Collider other)
     {
-        Debug.Log("entered puzzle zone");
+        if (other.tag == "Player") {
+            puzzleObject.GetComponent<Puzzle1>().inPuzzleZone = true;
+            Debug.Log("entered puzzle zone");
+        }
+        
+    }
+
+    private void OnTriggerExit(Collider other)
+    {
+        puzzleObject.GetComponent<Puzzle1>().inPuzzleZone = false;
     }
 }

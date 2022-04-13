@@ -2,10 +2,9 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class GameManager : MonoBehaviour
+public class Gate : MonoBehaviour
 {
-    public GameObject gate1;
-    public bool puzzle1 = false;
+    public GameObject exitLight;
     // Start is called before the first frame update
     void Start()
     {
@@ -15,8 +14,11 @@ public class GameManager : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if (puzzle1) {
-            gate1.GetComponent<Gate>().open();
-        }
+        
+    }
+
+    public void open() { 
+        gameObject.GetComponent<Animator>().Play("Gate");
+        exitLight.GetComponent<Light>().color = Color.green;
     }
 }

@@ -73,7 +73,7 @@ public class InputController : MonoBehaviour
         {
             triggerLPressed = false;
         }
-        rightController.TryGetFeatureValue(CommonUsages.gripButton, out bool gripL);
+        leftController.TryGetFeatureValue(CommonUsages.gripButton, out bool gripL);
         if (gripL)
         {
             gripLPressed = true;
