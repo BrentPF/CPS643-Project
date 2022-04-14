@@ -6,8 +6,10 @@ public class GameManager : MonoBehaviour
 {
     public GameObject gate1;
     public GameObject gate2;
+    public GameObject gate3;
     public bool puzzle1 = false;
     public bool puzzle2 = false;
+    public bool puzzle3 = false;
     // Start is called before the first frame update
     void Start()
     {
@@ -19,10 +21,18 @@ public class GameManager : MonoBehaviour
     {
         if (puzzle1) {
             gate1.GetComponent<Gate>().open();
+            puzzle1 = false;
         }
         if (puzzle2)
         {
             gate2.GetComponent<Gate>().open();
+            puzzle2 = false;
+        }
+        if (puzzle3)
+        {
+            gate3.GetComponent<Gate>().open();
+            puzzle3 = false;
         }
     }
+
 }
