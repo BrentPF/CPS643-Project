@@ -36,7 +36,7 @@ public class Puzzle1 : MonoBehaviour
             }
             else if (level == 2)
             {
-                Debug.Log(rightController.transform.localEulerAngles.x);
+                
                 if (rightController.transform.localEulerAngles.x < 300 && rightController.transform.localEulerAngles.x > 200 && !transitioning)
                 {
                     if (!inputController.triggerRPressed && inputController.gripRPressed)
@@ -48,6 +48,7 @@ public class Puzzle1 : MonoBehaviour
             }
             else if (level == 3)
             {
+                Debug.Log(rightController.transform.localEulerAngles.x);
                 if (leftController.transform.localEulerAngles.x < 300 && leftController.transform.localEulerAngles.x > 200 && !transitioning)
                 {
                     if (inputController.triggerLPressed && inputController.gripLPressed)
@@ -64,15 +65,16 @@ public class Puzzle1 : MonoBehaviour
     IEnumerator changeLevel(GameObject obj, GameObject nextObj = null) {
         obj.GetComponent<Renderer>().material.EnableKeyword("_EMISSION");
         level += 1;
+        if (nextObj==null)
+        {
+            gameManager.puzzle1 = true;
+        }
         yield return new WaitForSeconds(3);
         if (nextObj)
         {
             Debug.Log("not null");
             obj.SetActive(false);
             nextObj.SetActive(true);
-        }
-        else {
-            gameManager.puzzle1 = true;
         }
         Debug.Log("routine finish");
         transitioning = false;

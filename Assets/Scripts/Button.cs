@@ -6,7 +6,7 @@ public class Button : MonoBehaviour
 {
     private float defaultPositionY;
     private ConstantForce defaultForce;
-
+    public bool flipped = false;
     public bool pressed = false;
 
     // Add constant up force
@@ -21,9 +21,11 @@ public class Button : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if (gameObject.transform.position.y < defaultPositionY)
+        if ((!flipped && gameObject.transform.position.y < defaultPositionY) || (flipped == true && gameObject.transform.position.y > defaultPositionY))
         {
+            Debug.Log("GO Y: " + gameObject.transform.position.y + ", Default Y: " + defaultPositionY);
             pressed = true;
+            defaultForce.enabled = true;
         }
         else
         {
