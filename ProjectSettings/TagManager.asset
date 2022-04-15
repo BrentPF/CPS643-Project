@@ -5,6 +5,9 @@ TagManager:
   serializedVersion: 2
   tags:
   - Weight
+  - BlueBall
+  - PinkBall
+  - OrangeBall
   layers:
   - Default
   - TransparentFX
