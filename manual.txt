@@ -1,0 +1,43 @@
+[CPS643 Final Project: Escape Room]
+
+Group Members: 
+
+Description: 
+A virtual reality escape room experience
+
+Controls:
+Grip Buttons	 	Gesture or Interact
+Trigger Buttons	 	Gesture
+Right Thumbstick	Snap Turn or Smooth Turn
+Left Thumstick		Continuous Movement
+
+Manual:
+The game was developed using a Meta Quest 2 headset and controllers (compatibility with other headsets has not been tested). To start the game, open the
+Unity project with Unity 2020.3.24f1 and press the play button in the editor. You will begin in the starting room which contains a menu with instructions
+on how to start the escape room experience. The menu also has buttons to select the turning style (snasp or smooth) to help mitigate any motion sickness. This escape room is timed
+and replayable once complete, have fun and good luck!
+
+Scripts:
+GameManager - Always active while the escape room is started. Maintains state of entire game (time, puzzles completed, win conditions). When all puzzles are complete
+the GameManager stops timing the escape room and unlocks the ending room that gives the player the option to restart the game.
+
+Puzzle[1,2,3,4] - Scripts for each puzzle that communicate with the GameManager. Each script manages most of the puzzle interactions and conditions
+that occur in their respective room (i.e. Puzzle1 keeps track of any interactions that occur in room 1). When the player does everything intended by the puzzle
+the puzzle script will let the GameManager know and the puzzle room will be set to completed.
+
+Settings - Enables/disabled the setting selected by the user. For example, enabling Snap turning will enable the snap turning script attached to the XR Origin, as well as disable
+the continuous turning script.
+
+XR Interaction Toolkit - Scripts that provide basic functionality for VR development in Unity. Provides scripts for input mapping and controller settings.
+
+Miscellaneous Scripts - Single purpose scripts that belong to a specific object (i.e. the Weight script for assigning a weight to the attached game object). These scripts
+primarily exist to provide simple functionality to objects in the escape room. Some other examples include the Gate script which plays the attached gate opening animations
+and the Key script that adds key values to a text mesh when the attached game object is selected.
+
+Special Assets Imported/Created:
+A full list of resopurces and assets can be found in attributions.txt, but here are most significant imported assets:
+	Outline - A script that provides highlighting functionality to 3D objects
+	Pro Sound Collection - All sound effects used came from this collection
+	Everything else - Custom materials, meshes, and prefabs used to create props for the game
+
+All animations were created by us.
