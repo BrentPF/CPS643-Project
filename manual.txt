@@ -40,4 +40,12 @@ A full list of resopurces and assets can be found in attributions.txt, but here 
 	Pro Sound Collection - All sound effects used came from this collection
 	Everything else - Custom materials, meshes, and prefabs used to create props for the game
 
-All animations were created by us.
+All animations were created by us
+
+Extending the Project:
+With extensibility in mind, prefabs for common objects can be added to the scene for the creation of new levels. For example, the Rooms prefab can be added to
+the hierarchy to create an empty puzzle room. When creating a new puzzle room, a new gate object and new a puzzle variable need to be referenced in the GameManager.
+Additionally, it is recommended that you create a new puzzle subfolder in the scripts folder for any new scripts related to this new puzzle. When the player completes
+all puzzle objectives in the new room, the respective puzzle variable in the GameManager should be set to true (i.e. through a script such as PuzzleN, n = 5, 6, 7...).
+The GameManager's win condition and updates must also be extended to take into account this new room; add the new puzzle variable to the win condition and a new code
+snippet to open the new gate when the puzzle variable is set to true. This process should be repeated for any new levels.
